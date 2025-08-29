@@ -72,96 +72,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Paginated set of `AlbumResource`",
+                        "description": "",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/AlbumResource"
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "object",
-                                            "properties": {
-                                                "total": {
-                                                    "type": "integer",
-                                                    "description": "Total number of items being paginated."
-                                                },
-                                                "count": {
-                                                    "type": "integer",
-                                                    "description": "The number of items for the current page"
-                                                },
-                                                "limit": {
-                                                    "type": "integer",
-                                                    "description": "The number of items per page"
-                                                },
-                                                "currentPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of current page"
-                                                },
-                                                "nextPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of next page"
-                                                },
-                                                "lastPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of last page"
-                                                }
-                                            },
-                                            "required": [
-                                                "total",
-                                                "count",
-                                                "limit",
-                                                "currentPage",
-                                                "nextPage",
-                                                "lastPage"
-                                            ]
-                                        },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            },
-                                            "required": [
-                                                "first",
-                                                "last",
-                                                "prev",
-                                                "next"
-                                            ]
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "links",
-                                        "meta"
-                                    ]
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AlbumResource"
+                                    }
                                 }
                             }
                         }
@@ -341,96 +259,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Paginated set of `ArtistResource`",
+                        "description": "",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/ArtistResource"
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "object",
-                                            "properties": {
-                                                "total": {
-                                                    "type": "integer",
-                                                    "description": "Total number of items being paginated."
-                                                },
-                                                "count": {
-                                                    "type": "integer",
-                                                    "description": "The number of items for the current page"
-                                                },
-                                                "limit": {
-                                                    "type": "integer",
-                                                    "description": "The number of items per page"
-                                                },
-                                                "currentPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of current page"
-                                                },
-                                                "nextPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of next page"
-                                                },
-                                                "lastPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of last page"
-                                                }
-                                            },
-                                            "required": [
-                                                "total",
-                                                "count",
-                                                "limit",
-                                                "currentPage",
-                                                "nextPage",
-                                                "lastPage"
-                                            ]
-                                        },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            },
-                                            "required": [
-                                                "first",
-                                                "last",
-                                                "prev",
-                                                "next"
-                                            ]
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "links",
-                                        "meta"
-                                    ]
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ArtistResource"
+                                    }
                                 }
                             }
                         }
@@ -607,7 +443,7 @@
             "post": {
                 "operationId": "auth.streamToken",
                 "description": "Generates a short-lived token specifically for media streaming operations.\nThese tokens have limited scope and shorter expiration for enhanced security.",
-                "summary": "Create stream-specific access token",
+                "summary": "Create a stream-specific access token",
                 "tags": [
                     "Auth"
                 ],
@@ -643,7 +479,7 @@
             "post": {
                 "operationId": "auth.register",
                 "description": "Creates a new user account with the provided information and automatically\nlogs them in with access and refresh tokens.",
-                "summary": "Register new user account",
+                "summary": "Register a new user account",
                 "tags": [
                     "Auth"
                 ],
@@ -849,7 +685,7 @@
             "post": {
                 "operationId": "auth.forgotPassword",
                 "description": "Sends a password reset link to the specified email address if a user\naccount exists. The link contains a secure token for verification.",
-                "summary": "Request password reset link",
+                "summary": "Request a password-reset link",
                 "tags": [
                     "Auth"
                 ],
@@ -895,7 +731,7 @@
         "/api/auth/resetPassword": {
             "post": {
                 "operationId": "auth.resetPassword",
-                "description": "Resets the user's password using a valid reset token. All existing\ntokens are revoked for security after password change.",
+                "description": "Resets the user's password using a valid reset token. All existing\ntokens are revoked for security after a password change.",
                 "summary": "Reset user password",
                 "tags": [
                     "Auth"
@@ -963,7 +799,7 @@
             "post": {
                 "operationId": "auth.verifyEmail",
                 "description": "Verifies a user's email address using the verification link sent during\nregistration or email change. Marks the email as verified.",
-                "summary": "Verify user email address",
+                "summary": "Verify the user email address",
                 "tags": [
                     "Auth"
                 ],
@@ -1009,7 +845,7 @@
             "post": {
                 "operationId": "auth.logout",
                 "description": "Revokes the current access and refresh tokens, effectively logging out\nthe user from the current session/device.",
-                "summary": "Log out current session",
+                "summary": "Log out the current session",
                 "tags": [
                     "Auth"
                 ],
@@ -1133,10 +969,10 @@
                                             "type": "object",
                                             "properties": {
                                                 "accessToken": {
-                                                    "$ref": "#/components/schemas/NewAccessTokenResource"
+                                                    "type": "object"
                                                 },
                                                 "refreshToken": {
-                                                    "$ref": "#/components/schemas/NewAccessTokenResource"
+                                                    "type": "object"
                                                 },
                                                 "sessionId": {
                                                     "type": "string"
@@ -1715,96 +1551,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Paginated set of `GenreResource`",
+                        "description": "",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/GenreResource"
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "object",
-                                            "properties": {
-                                                "total": {
-                                                    "type": "integer",
-                                                    "description": "Total number of items being paginated."
-                                                },
-                                                "count": {
-                                                    "type": "integer",
-                                                    "description": "The number of items for the current page"
-                                                },
-                                                "limit": {
-                                                    "type": "integer",
-                                                    "description": "The number of items per page"
-                                                },
-                                                "currentPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of current page"
-                                                },
-                                                "nextPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of next page"
-                                                },
-                                                "lastPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of last page"
-                                                }
-                                            },
-                                            "required": [
-                                                "total",
-                                                "count",
-                                                "limit",
-                                                "currentPage",
-                                                "nextPage",
-                                                "lastPage"
-                                            ]
-                                        },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            },
-                                            "required": [
-                                                "first",
-                                                "last",
-                                                "prev",
-                                                "next"
-                                            ]
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "links",
-                                        "meta"
-                                    ]
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/GenreResource"
+                                    }
                                 }
                             }
                         }
@@ -1926,7 +1680,7 @@
                 ],
                 "responses": {
                     "204": {
-                        "description": "Genre successfully deleted - no content returned.\n\n\n\nNo content"
+                        "description": "No content"
                     },
                     "404": {
                         "$ref": "#/components/responses/ModelNotFoundException"
@@ -2804,96 +2558,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Paginated set of `LibraryResource`",
+                        "description": "",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/LibraryResource"
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "object",
-                                            "properties": {
-                                                "total": {
-                                                    "type": "integer",
-                                                    "description": "Total number of items being paginated."
-                                                },
-                                                "count": {
-                                                    "type": "integer",
-                                                    "description": "The number of items for the current page"
-                                                },
-                                                "limit": {
-                                                    "type": "integer",
-                                                    "description": "The number of items per page"
-                                                },
-                                                "currentPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of current page"
-                                                },
-                                                "nextPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of next page"
-                                                },
-                                                "lastPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of last page"
-                                                }
-                                            },
-                                            "required": [
-                                                "total",
-                                                "count",
-                                                "limit",
-                                                "currentPage",
-                                                "nextPage",
-                                                "lastPage"
-                                            ]
-                                        },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            },
-                                            "required": [
-                                                "first",
-                                                "last",
-                                                "prev",
-                                                "next"
-                                            ]
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "links",
-                                        "meta"
-                                    ]
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LibraryResource"
+                                    }
                                 }
                             }
                         }
@@ -3363,137 +3035,6 @@
                 }
             }
         },
-        "/api/logs/{logFile}/search": {
-            "get": {
-                "operationId": "logs.search",
-                "description": "Performs high-performance pattern matching within log files with support\nfor case-sensitive/insensitive searches and configurable result limits.",
-                "summary": "Search for patterns within a log file",
-                "tags": [
-                    "Logs"
-                ],
-                "parameters": [
-                    {
-                        "name": "logFile",
-                        "in": "path",
-                        "required": true,
-                        "description": "The log file identifier to search",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "pattern",
-                        "in": "query",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "minLength": 1,
-                            "maxLength": 500
-                        }
-                    },
-                    {
-                        "name": "caseSensitive",
-                        "in": "query",
-                        "schema": {
-                            "type": "boolean"
-                        }
-                    },
-                    {
-                        "name": "maxResults",
-                        "in": "query",
-                        "schema": {
-                            "type": "integer",
-                            "minimum": 1,
-                            "maximum": 1000
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "anyOf": [
-                                        {
-                                            "type": "object",
-                                            "properties": {
-                                                "data": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "pattern": {
-                                                            "type": "string"
-                                                        },
-                                                        "caseSensitive": {
-                                                            "type": "boolean"
-                                                        },
-                                                        "totalMatches": {
-                                                            "type": "integer"
-                                                        },
-                                                        "searchTimeMs": {
-                                                            "type": "number"
-                                                        },
-                                                        "results": {
-                                                            "type": "array",
-                                                            "items": {
-                                                                "type": "object",
-                                                                "properties": {
-                                                                    "lineNumber": {
-                                                                        "type": "integer"
-                                                                    },
-                                                                    "content": {
-                                                                        "type": "string"
-                                                                    },
-                                                                    "matchPosition": {
-                                                                        "type": "integer"
-                                                                    }
-                                                                },
-                                                                "required": [
-                                                                    "lineNumber",
-                                                                    "content",
-                                                                    "matchPosition"
-                                                                ]
-                                                            }
-                                                        }
-                                                    },
-                                                    "required": [
-                                                        "pattern",
-                                                        "caseSensitive",
-                                                        "totalMatches",
-                                                        "searchTimeMs",
-                                                        "results"
-                                                    ]
-                                                }
-                                            },
-                                            "required": [
-                                                "data"
-                                            ]
-                                        },
-                                        {
-                                            "type": "object",
-                                            "properties": {
-                                                "error": {
-                                                    "type": "string"
-                                                }
-                                            },
-                                            "required": [
-                                                "error"
-                                            ]
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    },
-                    "422": {
-                        "$ref": "#/components/responses/ValidationException"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/AuthenticationException"
-                    }
-                }
-            }
-        },
         "/api/logs/{logFile}/tail": {
             "get": {
                 "operationId": "logs.tail",
@@ -3790,6 +3331,137 @@
                                 }
                             }
                         }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/AuthenticationException"
+                    }
+                }
+            }
+        },
+        "/api/logs/{logFile}/search": {
+            "get": {
+                "operationId": "logs.search",
+                "description": "Performs high-performance pattern matching within log files with support\nfor case-sensitive/insensitive searches and configurable result limits.",
+                "summary": "Search for patterns within a log file",
+                "tags": [
+                    "Logs"
+                ],
+                "parameters": [
+                    {
+                        "name": "logFile",
+                        "in": "path",
+                        "required": true,
+                        "description": "The log file identifier to search",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pattern",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 500
+                        }
+                    },
+                    {
+                        "name": "caseSensitive",
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "maxResults",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 1000
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "anyOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "data": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "pattern": {
+                                                            "type": "string"
+                                                        },
+                                                        "caseSensitive": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "totalMatches": {
+                                                            "type": "integer"
+                                                        },
+                                                        "searchTimeMs": {
+                                                            "type": "number"
+                                                        },
+                                                        "results": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "lineNumber": {
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "content": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "matchPosition": {
+                                                                        "type": "integer"
+                                                                    }
+                                                                },
+                                                                "required": [
+                                                                    "lineNumber",
+                                                                    "content",
+                                                                    "matchPosition"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "pattern",
+                                                        "caseSensitive",
+                                                        "totalMatches",
+                                                        "searchTimeMs",
+                                                        "results"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "data"
+                                            ]
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "error": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "error"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/ValidationException"
                     },
                     "401": {
                         "$ref": "#/components/responses/AuthenticationException"
@@ -4516,7 +4188,7 @@
         "/api/libraries/{library}/movies": {
             "get": {
                 "operationId": "movies.index",
-                "description": "Returns a paginated list of all movies contained within the specified video library.\nMovies are filtered by library to ensure only content from the requested library is returned.",
+                "description": "Returns a paginated list of all movies contained within the specified video library.\nMovies are filtered by the library to ensure only content from the requested library is returned.",
                 "summary": "Get a paginated collection of movies from a specific library",
                 "tags": [
                     "Movie"
@@ -4534,96 +4206,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Paginated set of `MovieResource`",
+                        "description": "",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/MovieResource"
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "object",
-                                            "properties": {
-                                                "total": {
-                                                    "type": "integer",
-                                                    "description": "Total number of items being paginated."
-                                                },
-                                                "count": {
-                                                    "type": "integer",
-                                                    "description": "The number of items for the current page"
-                                                },
-                                                "limit": {
-                                                    "type": "integer",
-                                                    "description": "The number of items per page"
-                                                },
-                                                "currentPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of current page"
-                                                },
-                                                "nextPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of next page"
-                                                },
-                                                "lastPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of last page"
-                                                }
-                                            },
-                                            "required": [
-                                                "total",
-                                                "count",
-                                                "limit",
-                                                "currentPage",
-                                                "nextPage",
-                                                "lastPage"
-                                            ]
-                                        },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            },
-                                            "required": [
-                                                "first",
-                                                "last",
-                                                "prev",
-                                                "next"
-                                            ]
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "links",
-                                        "meta"
-                                    ]
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/MovieResource"
+                                    }
                                 }
                             }
                         }
@@ -5086,96 +4676,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Paginated set of `PlaylistResource`",
+                        "description": "",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/PlaylistResource"
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "object",
-                                            "properties": {
-                                                "total": {
-                                                    "type": "integer",
-                                                    "description": "Total number of items being paginated."
-                                                },
-                                                "count": {
-                                                    "type": "integer",
-                                                    "description": "The number of items for the current page"
-                                                },
-                                                "limit": {
-                                                    "type": "integer",
-                                                    "description": "The number of items per page"
-                                                },
-                                                "currentPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of current page"
-                                                },
-                                                "nextPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of next page"
-                                                },
-                                                "lastPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of last page"
-                                                }
-                                            },
-                                            "required": [
-                                                "total",
-                                                "count",
-                                                "limit",
-                                                "currentPage",
-                                                "nextPage",
-                                                "lastPage"
-                                            ]
-                                        },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            },
-                                            "required": [
-                                                "first",
-                                                "last",
-                                                "prev",
-                                                "next"
-                                            ]
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "links",
-                                        "meta"
-                                    ]
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PlaylistResource"
+                                    }
                                 }
                             }
                         }
@@ -5273,6 +4781,39 @@
                     }
                 }
             },
+            "delete": {
+                "operationId": "playlist.destroy",
+                "description": "Permanently removes a playlist and all its associated data including\nsong associations, statistics, and collaborator relationships.",
+                "summary": "Delete a playlist",
+                "tags": [
+                    "Playlist"
+                ],
+                "parameters": [
+                    {
+                        "name": "playlist",
+                        "in": "path",
+                        "required": true,
+                        "description": "The playlist to delete",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Playlist successfully deleted - no content returned.\n\n\n\nNo content"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/AuthorizationException"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/ModelNotFoundException"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/AuthenticationException"
+                    }
+                }
+            },
             "put": {
                 "operationId": "playlist.update",
                 "description": "Updates playlist metadata including name, description, and visibility settings.\nOnly playlist owners and authorized collaborators can update playlists.",
@@ -5322,39 +4863,6 @@
                     },
                     "422": {
                         "$ref": "#/components/responses/ValidationException"
-                    }
-                }
-            },
-            "delete": {
-                "operationId": "playlist.destroy",
-                "description": "Permanently removes a playlist and all its associated data including\nsong associations, statistics, and collaborator relationships.",
-                "summary": "Delete a playlist",
-                "tags": [
-                    "Playlist"
-                ],
-                "parameters": [
-                    {
-                        "name": "playlist",
-                        "in": "path",
-                        "required": true,
-                        "description": "The playlist to delete",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "Playlist successfully deleted - no content returned.\n\n\n\nNo content"
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/AuthorizationException"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/ModelNotFoundException"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/AuthenticationException"
                     }
                 }
             }
@@ -6008,11 +5516,11 @@
                 }
             }
         },
-        "/api/playlists/{playlist}/smart": {
-            "put": {
-                "operationId": "playlist.smart-update",
-                "description": "Updates the rules for a smart playlist and re-syncs the song list\nto match the new criteria.",
-                "summary": "Update smart playlist rules",
+        "/api/playlists/{playlist}/smart/sync": {
+            "post": {
+                "operationId": "playlist.smart-sync",
+                "description": "Manually triggers a sync of the smart playlist to refresh the song list\nbased on the current rules and available songs in the library.",
+                "summary": "Synchronize smart playlist",
                 "tags": [
                     "Playlist"
                 ],
@@ -6021,29 +5529,27 @@
                         "name": "playlist",
                         "in": "path",
                         "required": true,
-                        "description": "The smart playlist to update",
+                        "description": "The smart playlist to synchronize",
                         "schema": {
                             "type": "string"
                         }
                     }
                 ],
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/UpdateSmartPlaylistRulesRequest"
-                            }
-                        }
-                    }
-                },
                 "responses": {
                     "200": {
-                        "description": "`PlaylistResource`",
+                        "description": "",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/PlaylistResource"
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "message"
+                                    ]
                                 }
                             }
                         }
@@ -6083,11 +5589,11 @@
                 }
             }
         },
-        "/api/playlists/{playlist}/smart/sync": {
-            "post": {
-                "operationId": "playlist.smart-sync",
-                "description": "Manually triggers a sync of the smart playlist to refresh the song list\nbased on the current rules and available songs in the library.",
-                "summary": "Synchronize smart playlist",
+        "/api/playlists/{playlist}/smart": {
+            "put": {
+                "operationId": "playlist.smart-update",
+                "description": "Updates the rules for a smart playlist and re-syncs the song list\nto match the new criteria.",
+                "summary": "Update smart playlist rules",
                 "tags": [
                     "Playlist"
                 ],
@@ -6096,27 +5602,29 @@
                         "name": "playlist",
                         "in": "path",
                         "required": true,
-                        "description": "The smart playlist to synchronize",
+                        "description": "The smart playlist to update",
                         "schema": {
                             "type": "string"
                         }
                     }
                 ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateSmartPlaylistRulesRequest"
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "`PlaylistResource`",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "message": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "required": [
-                                        "message"
-                                    ]
+                                    "$ref": "#/components/schemas/PlaylistResource"
                                 }
                             }
                         }
@@ -6218,96 +5726,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Paginated set of `QueueMonitorResource`",
+                        "description": "",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/QueueMonitorResource"
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "object",
-                                            "properties": {
-                                                "total": {
-                                                    "type": "integer",
-                                                    "description": "Total number of items being paginated."
-                                                },
-                                                "count": {
-                                                    "type": "integer",
-                                                    "description": "The number of items for the current page"
-                                                },
-                                                "limit": {
-                                                    "type": "integer",
-                                                    "description": "The number of items per page"
-                                                },
-                                                "currentPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of current page"
-                                                },
-                                                "nextPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of next page"
-                                                },
-                                                "lastPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of last page"
-                                                }
-                                            },
-                                            "required": [
-                                                "total",
-                                                "count",
-                                                "limit",
-                                                "currentPage",
-                                                "nextPage",
-                                                "lastPage"
-                                            ]
-                                        },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            },
-                                            "required": [
-                                                "first",
-                                                "last",
-                                                "prev",
-                                                "next"
-                                            ]
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "links",
-                                        "meta"
-                                    ]
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/QueueMonitorResource"
+                                    }
                                 }
                             }
                         }
@@ -6736,7 +6162,7 @@
         "/api/libraries/{library}/songs": {
             "get": {
                 "operationId": "songs.index",
-                "description": "Returns a filtered and paginated list of songs from the specified library.\nSupports relation inclusion and genre filtering. Songs are ordered by album title\nand track number for consistent browsing experience.",
+                "description": "Returns a filtered and paginated list of songs from the specified library.\nSupports relation inclusion and genre filtering. Songs are ordered by album title\nand track number for a consistent browsing experience.",
                 "summary": "Get a paginated collection of songs from a specific library",
                 "tags": [
                     "Song"
@@ -6789,96 +6215,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Paginated set of `SongResource`",
+                        "description": "",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/SongResource"
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "object",
-                                            "properties": {
-                                                "total": {
-                                                    "type": "integer",
-                                                    "description": "Total number of items being paginated."
-                                                },
-                                                "count": {
-                                                    "type": "integer",
-                                                    "description": "The number of items for the current page"
-                                                },
-                                                "limit": {
-                                                    "type": "integer",
-                                                    "description": "The number of items per page"
-                                                },
-                                                "currentPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of current page"
-                                                },
-                                                "nextPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of next page"
-                                                },
-                                                "lastPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of last page"
-                                                }
-                                            },
-                                            "required": [
-                                                "total",
-                                                "count",
-                                                "limit",
-                                                "currentPage",
-                                                "nextPage",
-                                                "lastPage"
-                                            ]
-                                        },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            },
-                                            "required": [
-                                                "first",
-                                                "last",
-                                                "prev",
-                                                "next"
-                                            ]
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "links",
-                                        "meta"
-                                    ]
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SongResource"
+                                    }
                                 }
                             }
                         }
@@ -7797,96 +7141,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Paginated set of `UserResource`",
+                        "description": "",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/UserResource"
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "object",
-                                            "properties": {
-                                                "total": {
-                                                    "type": "integer",
-                                                    "description": "Total number of items being paginated."
-                                                },
-                                                "count": {
-                                                    "type": "integer",
-                                                    "description": "The number of items for the current page"
-                                                },
-                                                "limit": {
-                                                    "type": "integer",
-                                                    "description": "The number of items per page"
-                                                },
-                                                "currentPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of current page"
-                                                },
-                                                "nextPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of next page"
-                                                },
-                                                "lastPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of last page"
-                                                }
-                                            },
-                                            "required": [
-                                                "total",
-                                                "count",
-                                                "limit",
-                                                "currentPage",
-                                                "nextPage",
-                                                "lastPage"
-                                            ]
-                                        },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            },
-                                            "required": [
-                                                "first",
-                                                "last",
-                                                "prev",
-                                                "next"
-                                            ]
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "links",
-                                        "meta"
-                                    ]
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/UserResource"
+                                    }
                                 }
                             }
                         }
@@ -8125,96 +7387,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Paginated set of `PersonalAccessTokenViewResource`",
+                        "description": "",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/PersonalAccessTokenViewResource"
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "object",
-                                            "properties": {
-                                                "total": {
-                                                    "type": "integer",
-                                                    "description": "Total number of items being paginated."
-                                                },
-                                                "count": {
-                                                    "type": "integer",
-                                                    "description": "The number of items for the current page"
-                                                },
-                                                "limit": {
-                                                    "type": "integer",
-                                                    "description": "The number of items per page"
-                                                },
-                                                "currentPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of current page"
-                                                },
-                                                "nextPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of next page"
-                                                },
-                                                "lastPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of last page"
-                                                }
-                                            },
-                                            "required": [
-                                                "total",
-                                                "count",
-                                                "limit",
-                                                "currentPage",
-                                                "nextPage",
-                                                "lastPage"
-                                            ]
-                                        },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            },
-                                            "required": [
-                                                "first",
-                                                "last",
-                                                "prev",
-                                                "next"
-                                            ]
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "links",
-                                        "meta"
-                                    ]
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/PersonalAccessTokenViewResource"
+                                    }
                                 }
                             }
                         }
