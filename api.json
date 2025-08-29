@@ -72,7 +72,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "Array of `AlbumResource`",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -259,7 +259,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "Array of `ArtistResource`",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1551,7 +1551,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "Array of `GenreResource`",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -2558,7 +2558,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "Array of `LibraryResource`",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3815,7 +3815,7 @@
                                                 "data": {
                                                     "type": "array",
                                                     "items": {
-                                                        "$ref": "#/components/schemas/.App.Http.Integrations.MusicBrainz.Models.Release"
+                                                        "$ref": "#/components/schemas/App.Http.Integrations.MusicBrainz.Models.Release"
                                                     }
                                                 },
                                                 "quality_score": {
@@ -3828,7 +3828,7 @@
                                                     "type": "integer"
                                                 },
                                                 "best_match": {
-                                                    "$ref": "#/components/schemas/.App.Http.Integrations.MusicBrainz.Models.Release"
+                                                    "$ref": "#/components/schemas/App.Http.Integrations.MusicBrainz.Models.Release"
                                                 }
                                             },
                                             "required": [
@@ -3949,7 +3949,7 @@
                                                                 "type": "string"
                                                             },
                                                             "data": {
-                                                                "$ref": "#/components/schemas/.App.Http.Integrations.MusicBrainz.Models.Release"
+                                                                "$ref": "#/components/schemas/App.Http.Integrations.MusicBrainz.Models.Release"
                                                             },
                                                             "raw_result": {
                                                                 "type": "array",
@@ -4024,7 +4024,7 @@
                                                             "type": "string"
                                                         },
                                                         "data": {
-                                                            "$ref": "#/components/schemas/.App.Http.Integrations.MusicBrainz.Models.Release"
+                                                            "$ref": "#/components/schemas/App.Http.Integrations.MusicBrainz.Models.Release"
                                                         },
                                                         "raw_result": {
                                                             "type": "array",
@@ -4206,7 +4206,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "Array of `MovieResource`",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -4688,43 +4688,6 @@
                                                 "$ref": "#/components/schemas/PlaylistResource"
                                             }
                                         },
-                                        "meta": {
-                                            "type": "object",
-                                            "properties": {
-                                                "total": {
-                                                    "type": "integer",
-                                                    "description": "Total number of items being paginated."
-                                                },
-                                                "count": {
-                                                    "type": "integer",
-                                                    "description": "The number of items for the current page"
-                                                },
-                                                "limit": {
-                                                    "type": "integer",
-                                                    "description": "The number of items per page"
-                                                },
-                                                "currentPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of current page"
-                                                },
-                                                "nextPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of next page"
-                                                },
-                                                "lastPage": {
-                                                    "type": "integer",
-                                                    "description": "The number of last page"
-                                                }
-                                            },
-                                            "required": [
-                                                "total",
-                                                "count",
-                                                "limit",
-                                                "currentPage",
-                                                "nextPage",
-                                                "lastPage"
-                                            ]
-                                        },
                                         "links": {
                                             "type": "object",
                                             "properties": {
@@ -4759,12 +4722,15 @@
                                                 "prev",
                                                 "next"
                                             ]
+                                        },
+                                        "meta": {
+                                            "type": "object"
                                         }
                                     },
                                     "required": [
                                         "data",
-                                        "links",
-                                        "meta"
+                                        "meta",
+                                        "links"
                                     ]
                                 }
                             }
@@ -5816,7 +5782,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "Array of `QueueMonitorResource`",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -6063,8 +6029,15 @@
                     }
                 ],
                 "responses": {
-                    "204": {
-                        "description": "Queue monitor entry successfully deleted - no content returned.\n\n\n\nNo content"
+                    "200": {
+                        "description": "Queue monitor entry successfully deleted - no content returned.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
                     },
                     "403": {
                         "$ref": "#/components/responses/AuthorizationException"
@@ -6305,7 +6278,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "Array of `SongResource`",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -7231,7 +7204,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "Array of `UserResource`",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -7477,7 +7450,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "Array of `PersonalAccessTokenViewResource`",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -7565,7 +7538,258 @@
             }
         },
         "schemas": {
-            ".App.Http.Integrations.MusicBrainz.Models.Release": {
+            "AlbumResource": {
+                "type": "object",
+                "properties": {
+                    "publicId": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "year": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/AlbumType"
+                    },
+                    "label": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "catalogNumber": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "barcode": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "country": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "language": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "disambiguation": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "annotation": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "spotifyId": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "mbid": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "discogsId": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    },
+                    "createdAt": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "format": "date-time"
+                    },
+                    "cover": {
+                        "description": "Cover relation",
+                        "$ref": "#/components/schemas/ImageResource"
+                    },
+                    "artists": {
+                        "type": "array",
+                        "description": "Album artists relation",
+                        "items": {
+                            "$ref": "#/components/schemas/ArtistResource"
+                        }
+                    },
+                    "songs": {
+                        "type": "array",
+                        "description": "Songs relation",
+                        "items": {
+                            "$ref": "#/components/schemas/SongResource"
+                        }
+                    },
+                    "genres": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "slug": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "slug",
+                                "name"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "publicId",
+                    "title",
+                    "year",
+                    "type",
+                    "label",
+                    "catalogNumber",
+                    "barcode",
+                    "country",
+                    "language",
+                    "disambiguation",
+                    "annotation",
+                    "spotifyId",
+                    "mbid",
+                    "discogsId",
+                    "createdAt",
+                    "updatedAt"
+                ],
+                "title": "AlbumResource"
+            },
+            "AlbumType": {
+                "type": "string",
+                "enum": [
+                    "studio",
+                    "live",
+                    "compilation",
+                    "soundtrack",
+                    "remix",
+                    "ep",
+                    "single",
+                    "demo",
+                    "mixtape",
+                    "bootleg",
+                    "interview",
+                    "audiobook",
+                    "spoken_word",
+                    "other"
+                ],
+                "title": "AlbumType"
+            },
+            "AlbumUpdateRequest": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 255
+                    },
+                    "year": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 9999
+                    },
+                    "mbid": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 255
+                    },
+                    "discogsId": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 999999999999
+                    },
+                    "genres": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "required": [
+                    "title"
+                ],
+                "title": "AlbumUpdateRequest"
+            },
+            "AlbumWithoutSongsResource": {
+                "type": "object",
+                "properties": {
+                    "publicId": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "year": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    },
+                    "createdAt": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "format": "date-time"
+                    },
+                    "cover": {
+                        "description": "Cover relation",
+                        "$ref": "#/components/schemas/ImageResource"
+                    },
+                    "artists": {
+                        "description": "Album artist relation",
+                        "$ref": "#/components/schemas/ArtistResource"
+                    }
+                },
+                "required": [
+                    "publicId",
+                    "title",
+                    "year",
+                    "createdAt",
+                    "updatedAt"
+                ],
+                "title": "AlbumWithoutSongsResource"
+            },
+            "App.Http.Integrations.MusicBrainz.Models.Release": {
                 "type": "object",
                 "properties": {
                     "release": {
@@ -7923,258 +8147,7 @@
                         "type": "integer"
                     }
                 },
-                "title": ".App.Http.Integrations.MusicBrainz.Models.Release"
-            },
-            "AlbumResource": {
-                "type": "object",
-                "properties": {
-                    "publicId": {
-                        "type": "string"
-                    },
-                    "title": {
-                        "type": "string"
-                    },
-                    "year": {
-                        "type": [
-                            "integer",
-                            "null"
-                        ]
-                    },
-                    "type": {
-                        "$ref": "#/components/schemas/AlbumType"
-                    },
-                    "label": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "catalogNumber": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "barcode": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "country": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "language": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "disambiguation": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "annotation": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "spotifyId": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "mbid": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "discogsId": {
-                        "type": [
-                            "integer",
-                            "null"
-                        ]
-                    },
-                    "createdAt": {
-                        "type": [
-                            "string",
-                            "null"
-                        ],
-                        "format": "date-time"
-                    },
-                    "updatedAt": {
-                        "type": [
-                            "string",
-                            "null"
-                        ],
-                        "format": "date-time"
-                    },
-                    "cover": {
-                        "description": "Cover relation",
-                        "$ref": "#/components/schemas/ImageResource"
-                    },
-                    "artists": {
-                        "type": "array",
-                        "description": "Album artists relation",
-                        "items": {
-                            "$ref": "#/components/schemas/ArtistResource"
-                        }
-                    },
-                    "songs": {
-                        "type": "array",
-                        "description": "Songs relation",
-                        "items": {
-                            "$ref": "#/components/schemas/SongResource"
-                        }
-                    },
-                    "genres": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "slug": {
-                                    "type": "string"
-                                },
-                                "name": {
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "slug",
-                                "name"
-                            ]
-                        }
-                    }
-                },
-                "required": [
-                    "publicId",
-                    "title",
-                    "year",
-                    "type",
-                    "label",
-                    "catalogNumber",
-                    "barcode",
-                    "country",
-                    "language",
-                    "disambiguation",
-                    "annotation",
-                    "spotifyId",
-                    "mbid",
-                    "discogsId",
-                    "createdAt",
-                    "updatedAt"
-                ],
-                "title": "AlbumResource"
-            },
-            "AlbumType": {
-                "type": "string",
-                "enum": [
-                    "studio",
-                    "live",
-                    "compilation",
-                    "soundtrack",
-                    "remix",
-                    "ep",
-                    "single",
-                    "demo",
-                    "mixtape",
-                    "bootleg",
-                    "interview",
-                    "audiobook",
-                    "spoken_word",
-                    "other"
-                ],
-                "title": "AlbumType"
-            },
-            "AlbumUpdateRequest": {
-                "type": "object",
-                "properties": {
-                    "title": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 255
-                    },
-                    "year": {
-                        "type": "number",
-                        "minimum": 0,
-                        "maximum": 9999
-                    },
-                    "mbid": {
-                        "type": "string",
-                        "minLength": 1,
-                        "maxLength": 255
-                    },
-                    "discogsId": {
-                        "type": "number",
-                        "minimum": 0,
-                        "maximum": 999999999999
-                    },
-                    "genres": {
-                        "type": "array",
-                        "items": {
-                            "type": "integer"
-                        }
-                    }
-                },
-                "required": [
-                    "title"
-                ],
-                "title": "AlbumUpdateRequest"
-            },
-            "AlbumWithoutSongsResource": {
-                "type": "object",
-                "properties": {
-                    "publicId": {
-                        "type": "string"
-                    },
-                    "title": {
-                        "type": "string"
-                    },
-                    "year": {
-                        "type": [
-                            "integer",
-                            "null"
-                        ]
-                    },
-                    "createdAt": {
-                        "type": [
-                            "string",
-                            "null"
-                        ],
-                        "format": "date-time"
-                    },
-                    "updatedAt": {
-                        "type": [
-                            "string",
-                            "null"
-                        ],
-                        "format": "date-time"
-                    },
-                    "cover": {
-                        "description": "Cover relation",
-                        "$ref": "#/components/schemas/ImageResource"
-                    },
-                    "artists": {
-                        "description": "Album artist relation",
-                        "$ref": "#/components/schemas/ArtistResource"
-                    }
-                },
-                "required": [
-                    "publicId",
-                    "title",
-                    "year",
-                    "createdAt",
-                    "updatedAt"
-                ],
-                "title": "AlbumWithoutSongsResource"
+                "title": "App.Http.Integrations.MusicBrainz.Models.Release"
             },
             "ArtistResource": {
                 "type": "object",
