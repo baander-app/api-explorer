@@ -2725,7 +2725,7 @@
                 ],
                 "responses": {
                     "204": {
-                        "description": "Library successfully deleted - no content returned.\n\n\n\nNo content"
+                        "description": "No content"
                     },
                     "404": {
                         "$ref": "#/components/responses/ModelNotFoundException"
@@ -4676,14 +4676,96 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "",
+                        "description": "Paginated set of `PlaylistResource`",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/PlaylistResource"
-                                    }
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/PlaylistResource"
+                                            }
+                                        },
+                                        "meta": {
+                                            "type": "object",
+                                            "properties": {
+                                                "total": {
+                                                    "type": "integer",
+                                                    "description": "Total number of items being paginated."
+                                                },
+                                                "count": {
+                                                    "type": "integer",
+                                                    "description": "The number of items for the current page"
+                                                },
+                                                "limit": {
+                                                    "type": "integer",
+                                                    "description": "The number of items per page"
+                                                },
+                                                "currentPage": {
+                                                    "type": "integer",
+                                                    "description": "The number of current page"
+                                                },
+                                                "nextPage": {
+                                                    "type": "integer",
+                                                    "description": "The number of next page"
+                                                },
+                                                "lastPage": {
+                                                    "type": "integer",
+                                                    "description": "The number of last page"
+                                                }
+                                            },
+                                            "required": [
+                                                "total",
+                                                "count",
+                                                "limit",
+                                                "currentPage",
+                                                "nextPage",
+                                                "lastPage"
+                                            ]
+                                        },
+                                        "links": {
+                                            "type": "object",
+                                            "properties": {
+                                                "first": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "last": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "prev": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "next": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "first",
+                                                "last",
+                                                "prev",
+                                                "next"
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "data",
+                                        "links",
+                                        "meta"
+                                    ]
                                 }
                             }
                         }
@@ -4801,7 +4883,7 @@
                 ],
                 "responses": {
                     "204": {
-                        "description": "Playlist successfully deleted - no content returned.\n\n\n\nNo content"
+                        "description": "No content"
                     },
                     "403": {
                         "$ref": "#/components/responses/AuthorizationException"
@@ -5070,7 +5152,7 @@
                         "name": "playlist",
                         "in": "path",
                         "required": true,
-                        "description": "The playlist to add collaborator to",
+                        "description": "The playlist public id",
                         "schema": {
                             "type": "string"
                         }
@@ -5110,7 +5192,10 @@
                                     "type": "object",
                                     "properties": {
                                         "message": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "enum": [
+                                                "Collaborator added"
+                                            ]
                                         }
                                     },
                                     "required": [
@@ -5148,7 +5233,7 @@
                         "name": "playlist",
                         "in": "path",
                         "required": true,
-                        "description": "The playlist to remove collaborator from",
+                        "description": "The playlist public id",
                         "schema": {
                             "type": "string"
                         }
@@ -5157,7 +5242,7 @@
                         "name": "user",
                         "in": "path",
                         "required": true,
-                        "description": "The user to remove as collaborator",
+                        "description": "The user public id",
                         "schema": {
                             "type": "string"
                         }
@@ -5172,7 +5257,10 @@
                                     "type": "object",
                                     "properties": {
                                         "message": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "enum": [
+                                                "Collaborator removed"
+                                            ]
                                         }
                                     },
                                     "required": [
@@ -5207,7 +5295,7 @@
                         "name": "playlist",
                         "in": "path",
                         "required": true,
-                        "description": "The playlist to clone",
+                        "description": "The playlist public id",
                         "schema": {
                             "type": "string"
                         }
@@ -5249,7 +5337,7 @@
                         "name": "playlist",
                         "in": "path",
                         "required": true,
-                        "description": "The playlist to get statistics for",
+                        "description": "The playlist public id",
                         "schema": {
                             "type": "string"
                         }
@@ -5281,7 +5369,6 @@
         "/api/playlists/{playlist}/statistics/record/view": {
             "post": {
                 "operationId": "playlist.statistics.record-view",
-                "description": "Increments the view counter for playlist analytics.\nUsed for tracking playlist popularity and engagement.",
                 "summary": "Record a playlist view",
                 "tags": [
                     "Playlist"
@@ -5291,7 +5378,7 @@
                         "name": "playlist",
                         "in": "path",
                         "required": true,
-                        "description": "The playlist that was viewed",
+                        "description": "The playlist public id",
                         "schema": {
                             "type": "string"
                         }
@@ -5306,7 +5393,10 @@
                                     "type": "object",
                                     "properties": {
                                         "message": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "enum": [
+                                                "View recorded"
+                                            ]
                                         }
                                     },
                                     "required": [
@@ -5516,9 +5606,9 @@
                 }
             }
         },
-        "/api/playlists/{playlist}/smart/sync": {
-            "post": {
-                "operationId": "playlist.smart-sync",
+        "/api/playlists/{playlist}/smart": {
+            "put": {
+                "operationId": "playlist.smart-update",
                 "description": "Manually triggers a sync of the smart playlist to refresh the song list\nbased on the current rules and available songs in the library.",
                 "summary": "Synchronize smart playlist",
                 "tags": [
@@ -5529,80 +5619,7 @@
                         "name": "playlist",
                         "in": "path",
                         "required": true,
-                        "description": "The smart playlist to synchronize",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "message": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "required": [
-                                        "message"
-                                    ]
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "An error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Error overview.",
-                                            "example": "Not a smart playlist"
-                                        }
-                                    },
-                                    "required": [
-                                        "message"
-                                    ]
-                                }
-                            }
-                        }
-                    },
-                    "403": {
-                        "$ref": "#/components/responses/AuthorizationException"
-                    },
-                    "422": {
-                        "$ref": "#/components/responses/ValidationException"
-                    },
-                    "404": {
-                        "$ref": "#/components/responses/ModelNotFoundException"
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/AuthenticationException"
-                    }
-                }
-            }
-        },
-        "/api/playlists/{playlist}/smart": {
-            "put": {
-                "operationId": "playlist.smart-update",
-                "description": "Updates the rules for a smart playlist and re-syncs the song list\nto match the new criteria.",
-                "summary": "Update smart playlist rules",
-                "tags": [
-                    "Playlist"
-                ],
-                "parameters": [
-                    {
-                        "name": "playlist",
-                        "in": "path",
-                        "required": true,
-                        "description": "The smart playlist to update",
+                        "description": "The playlist public id",
                         "schema": {
                             "type": "string"
                         }
@@ -5652,8 +5669,81 @@
                     "403": {
                         "$ref": "#/components/responses/AuthorizationException"
                     },
+                    "404": {
+                        "$ref": "#/components/responses/ModelNotFoundException"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/AuthenticationException"
+                    },
                     "422": {
                         "$ref": "#/components/responses/ValidationException"
+                    }
+                }
+            }
+        },
+        "/api/playlists/{playlist}/smart/sync": {
+            "post": {
+                "operationId": "playlist.smart-sync",
+                "description": "Updates the rules for a smart playlist and re-syncs the song list\nto match the new criteria.",
+                "summary": "Update smart playlist rules",
+                "tags": [
+                    "Playlist"
+                ],
+                "parameters": [
+                    {
+                        "name": "playlist",
+                        "in": "path",
+                        "required": true,
+                        "description": "The playlist public id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "enum": [
+                                                "Smart playlist synced"
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "message"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "An error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Error overview.",
+                                            "example": "Not a smart playlist"
+                                        }
+                                    },
+                                    "required": [
+                                        "message"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/AuthorizationException"
                     },
                     "404": {
                         "$ref": "#/components/responses/ModelNotFoundException"
